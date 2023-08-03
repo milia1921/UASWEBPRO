@@ -10,7 +10,7 @@ class Pengguna extends CI_Controller
 
         $this->load->model('auth_model');
 
-        if(!$this->auth_model->current_user()){
+        if (!$this->auth_model->current_user()) {
             redirect('auth/login');
         }
     }
@@ -26,15 +26,15 @@ class Pengguna extends CI_Controller
     public function Simpan()
     {
         $username       = $this->input->post('username');
-        $nama_user      = $this->input->post('nama_user');
+        $name           = $this->input->post('name');
         $pass           = $this->input->post('password');
-        $level          = $this->input->post('level');
+        $email          = $this->input->post('email');
 
         $data = array(
-            'username'  =>  $username,
-            'nama_user' =>  $nama_user,
-            'password'  =>  $pass,
-            'level'     =>  $level
+            'username'      => $username,
+            'name'          => $name,
+            'password'      => $pass,
+            'email'         => $email
         );
 
         $simpan         = $this->db->insert('user', $data);
@@ -50,21 +50,22 @@ class Pengguna extends CI_Controller
     public function Simpan_edit()
     {
         $username       = $this->input->post('username');
-        $nama_user      = $this->input->post('nama_user');
+        $name           = $this->input->post('name');
         $pass           = $this->input->post('password');
-        $level          = $this->input->post('level');
+        $email          = $this->input->post('email');
 
         // array menampung data yang akan disimpan
         $data = array(
             'username'      => $username,
-            'nama_user'     => $nama_user,
+            'name'          => $name,
             'password'      => $pass,
-            'level'         => $level
+            'email'         => $email
+
         );
         $this->db->where('username', $username);
         $update = $this->db->update('user', $data);
         if ($update) {
-            $this->session->set_flashdata('flash', 'Terupdate');
+            $this->session->set_flashdata('flashUpdate', 'Terupdate');
             redirect('pengguna');
         } else {
             $this->session->set_flasdata('Gagal', 'Gagal Terupdate');
@@ -77,7 +78,7 @@ class Pengguna extends CI_Controller
         $hapus = $this->db->delete('user', array('username' => $username));
 
         if ($hapus) {
-            $this->session->set_flashdata('flash', 'Terhapus');
+            $this->session->set_flashdata('flashHapus', 'Terhapus');
             redirect('pengguna');
         } else {
             $this->session->set_flashdata('flash', 'Gagal Terhapus');

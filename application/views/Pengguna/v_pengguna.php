@@ -50,7 +50,7 @@
                                                                             </div>
                                                                             <div class="form-group">
                                                                                 <label for="">Nama Petugas</label>
-                                                                                <input type="text" value="<?php echo $petugas->name ?>" class="form-control" id="" name="nama_user">
+                                                                                <input type="text" value="<?php echo $petugas->name ?>" class="form-control" id="" name="name">
                                                                             </div>
 
                                                                             <div class="form-group">
@@ -61,7 +61,7 @@
                                                                                 <label for="">Password</label>
                                                                                 <input type="password" value="<?= $petugas->password ?>" class="form-control" id="" name="password">
                                                                             </div>
-                                                                      <br>
+                                                                            <br>
                                                                         </div>
                                                                         <!-- /.card-body -->
                                                                         <div class="box-footer col-12 pb-3 d-flex justify-content-between float-right">
@@ -127,20 +127,20 @@
                                 <label for="">Password</label>
                                 <input type="password" class="form-control" id="" name="password" placeholder="Password" required>
                             </div>
-                            
-                            </div><br>
-                        </div>
-                        <!-- /.card-body -->
-                        <div class="box-footer col-12 pb-3 d-flex justify-content-between float-right">
-                            <button type="button" class="btn btn-danger ml-3" data-dismiss="modal">BATAL</button>
-                            <button id="simpan" type="submit" class="btn  btn-primary mr-3">SIMPAN</button>
-                        </div>
-                    </form>
+
+                        </div><br>
                 </div>
+                <!-- /.card-body -->
+                <div class="box-footer col-12 pb-3 d-flex justify-content-between float-right">
+                    <button type="button" class="btn btn-danger ml-3" data-dismiss="modal">BATAL</button>
+                    <button id="simpan" type="submit" class="btn  btn-primary mr-3">SIMPAN</button>
+                </div>
+                </form>
             </div>
-            <!-- /.modal-content -->
         </div>
-        <!-- /.modal-dialog -->
+        <!-- /.modal-content -->
+    </div>
+    <!-- /.modal-dialog -->
     </div>
     <!-- /.modal -->
 </section>

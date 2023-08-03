@@ -88,7 +88,7 @@ class Dataassets extends CI_Controller
             }
 
             $data = array(
-                'photo' => $upload['file_name'],
+                'photo'         => $upload['file_name'],
                 'kode_barang' => $kode_barang,
                 'nama_barang' => $nama_barang,
                 'kategori'      => $kategori,
